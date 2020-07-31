@@ -1,0 +1,56 @@
+<p>show works!</p>
+<table style="border: 1px solid black">
+    <tr style="border: 1px solid black">
+      <th>Name</th>
+      <th>score</th>
+      <th>Password</th>
+    
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.score}}</td>
+      <td>{{user.password}}</td>
+      
+      <td> <button (click)="delete(user._id)">delete</button></td>
+        <td> <button (click)="getI(user._id)">edit</button></td>
+                                                                       
+    </tr>
+</table>
+<!-- Default -->
+
+  <div class="modal fade" bsModal #modal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <form #userForm="ngForm"(ngSubmit)="onSubmit()" novalidate>
+
+            <div class="form-group">
+              <label>User_Name</label>
+              <!--input  type="text" class="form-control" name="username" [(ngModel)]="userModel.name"-->
+              <input type="text" class="form-control" placeholder="David Smith"name="username" [(ngModel)]="user.username"readonly>
+              <i class="form-group__bar"></i>
+            </div>
+            <div class="form-group">
+              <label>score</label>
+              <!--input  type="text" class="form-control" name="username" [(ngModel)]="userModel.name"-->
+              <input type="number" class="form-control" placeholder=""name="score" [(ngModel)]="user.score">
+              <i class="form-group__bar"></i>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <!--input type="email" class="form-control" name=" Email" [(ngModel)]="userModel.email" -->
+              <input type="password" class="form-control" placeholder="************" name="Password" [(ngModel)]="user.password">
+              <i class="form-group__bar"></i> 
+            </div>
+            <button type="submit">submit form</button>
+        
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+-->
+
